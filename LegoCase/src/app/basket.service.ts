@@ -10,11 +10,16 @@ export class BasketService {
   public items = [];
 
   public addItem(item) {
-    this.items.push(item);
+    const itemExists = this.items.findIndex(e => e.header === item.header) >= 0;
+    if (itemExists) {
+      item.quantity++;
+    } else {
+      this.items.push(item);
+    }
   }
 
   public removeItem(item) {
-    const index = this.items.findIndex(e => e === item);
+    const index = this.items.findIndex(e => e.header === item.header);
     this.items.splice(index, 1);
   }
 

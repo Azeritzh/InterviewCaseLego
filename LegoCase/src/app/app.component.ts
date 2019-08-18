@@ -9,6 +9,7 @@ import { BasketService } from './basket.service';
 export class AppComponent {
   public basketInfo = [];
   public basketTotalAmount = 0;
+  public showBasketPage = false;
 
   constructor(public basketService: BasketService) {
     this.basketInfo = basketService.items;
@@ -18,8 +19,16 @@ export class AppComponent {
   public openBasketPreview = false;
 
   public recieveBasketInfo() {
-    this.openBasketPreview = true;
+    this.showBasketPreview();
     this.basketTotalAmount = this.basketService.calculateTotal();
+  }
+
+  public showBasketPreview() {
+    this.openBasketPreview = true;
+  }
+
+  public returnToListings() {
+    this.showBasketPage = false;
   }
 
   public closePreviewBasket() {
@@ -29,5 +38,10 @@ export class AppComponent {
   public removeFromBasket(item) {
     this.basketService.removeItem(item);
     this.basketTotalAmount = this.basketService.calculateTotal();
+  }
+
+  public changeToBasketPage() {
+    this.closePreviewBasket();
+    this.showBasketPage = true;
   }
 }

@@ -1,1 +1,22 @@
-<p>basket-page works!</p>
+<div class="basket-background">
+    <div>
+        <button class="return-btn" (click)="returnToListings()"><h4>Return to listings</h4></button>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center">
+        <div class="basket-item" *ngFor="let item of basketItems" fxLayout="row" fxLayoutAlign="space-between center">
+            <div class="item-img"></div>
+            <div class="info-container">
+                <div><h3 class="item-text">{{item.header}}</h3></div>
+                <div><h4 class="item-text">{{item.subheader}}</h4></div>
+            </div>
+            <div><h3 class="item-text">{{item.price}} kr</h3></div>
+            <div fxLayout="row">
+                <h3>Quantity: </h3>
+                <input class="quantity-input" type="number" (input)="updateQuantity(item, $event)" [value]="item.quantity">
+            </div>
+            <div>
+                <button class="remove-btn"><h4>Remove</h4></button>
+            </div>
+        </div>
+    </div>
+</div>
