@@ -8,6 +8,7 @@ export class BasketService {
   constructor() { }
 
   public items = [];
+  public totalCost = 0;
 
   public addItem(item) {
     const itemExists = this.items.findIndex(e => e.header === item.header) >= 0;
@@ -16,11 +17,13 @@ export class BasketService {
     } else {
       this.items.push(item);
     }
+    this.calculateTotal();
   }
 
   public removeItem(item) {
     const index = this.items.findIndex(e => e.header === item.header);
     this.items.splice(index, 1);
+    this.calculateTotal();
   }
 
   public calculateTotal() {
@@ -28,6 +31,6 @@ export class BasketService {
     for (const item of this.items) {
       total += item.price;
     }
-    return total;
+    this.totalCost = total;
   }
 }

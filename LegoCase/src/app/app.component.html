@@ -9,7 +9,7 @@
       <div class="item-list-container" fxLayout="column" fxLayoutAlign="start center">
         <div class="item-container" *ngFor="let item of basketInfo" fxLayout="row" fxLayoutAlign="space-between center">
           <div>
-            <div class="preview-img"></div>
+            <img class="preview-img" src="{{item.image}}">
           </div>
           <div>
             <h3 class="item-header">{{item.header}}</h3>
@@ -28,11 +28,14 @@
 
 <div class="navbar" fxLayout="row" fxLayoutAlign="space-between center">
   <div class="logo">
-    <div>logo</div>
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <img class="logo-img" src="/assets/images/frontpage_figure.svg">
+      <h3>The Creative Shop</h3>
+    </div>
   </div>
   <div class="shopping-basket" fxLayout="row" fxLayoutAlign="space-between center" >
     <button class="basket-btn" fxLayout="row" fxLayoutAlign="space-between center" (click)="showBasketPreview()">
-      <div class="basket-img"></div>
+      <img class="basket-img" src="/assets/images/shopping_cart.png">
       <div class="basket-total"><h4>Total: {{basketTotalAmount}} kr</h4></div>
       <div><h4>Qty: {{basketInfo.length}}</h4></div>
     </button>

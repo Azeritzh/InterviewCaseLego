@@ -24,4 +24,8 @@ export class BasketPageComponent implements OnInit {
   returnToListings() {
     this.returnEvent.emit();
   }
+
+  removeItem(item) {
+    this.basketService.removeItem(item);
+  }
 }

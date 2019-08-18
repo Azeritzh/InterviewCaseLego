@@ -8,19 +8,19 @@ import { BasketService } from './basket.service';
 })
 export class AppComponent {
   public basketInfo = [];
-  public basketTotalAmount = 0;
+  public get basketTotalAmount() {
+    return this.basketService.totalCost;
+  }
   public showBasketPage = false;
 
   constructor(public basketService: BasketService) {
     this.basketInfo = basketService.items;
-    this.basketTotalAmount = basketService.calculateTotal();
   }
 
   public openBasketPreview = false;
 
   public recieveBasketInfo() {
     this.showBasketPreview();
-    this.basketTotalAmount = this.basketService.calculateTotal();
   }
 
   public showBasketPreview() {
@@ -37,7 +37,6 @@ export class AppComponent {
 
   public removeFromBasket(item) {
     this.basketService.removeItem(item);
-    this.basketTotalAmount = this.basketService.calculateTotal();
   }
 
   public changeToBasketPage() {

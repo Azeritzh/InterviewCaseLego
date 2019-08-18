@@ -22,13 +22,14 @@
     min-height: 48rem;
     height: 100vh;
     position: absolute;
+    z-index: 2;
 }
 
 .basket-preview {
     background-color: white;
     width: 30rem;
     height: 30rem;
-    z-index: 1;
+    z-index: 3;
     border-radius: 0.5rem;
 }
 
@@ -92,10 +93,14 @@
 .basket-img {
     width: 2rem;
     height: 2rem;
-    background-color: grey;
 }
 
 .basket-total {
     border-right: 2px solid white;
     padding: 0.5rem;
+}
+
+.logo-img {
+    width: 3rem;
+    margin: 0 1rem;
 }

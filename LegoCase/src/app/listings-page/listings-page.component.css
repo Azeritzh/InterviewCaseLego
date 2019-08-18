@@ -21,9 +21,22 @@
 }
 
 .item-info {
-    background-color: #4c3737;
+    background-color: black;
     width: 15rem;
     padding: 0.5rem;
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
+    z-index: 1;
+    opacity: 0.8;
+}
+
+.item-img {
+    width: 15rem;
+    position: absolute;
+    border-radius: 0.5rem;
+}
+
+.subheader-style {
+    font-weight: unset;
+    color: #828282;
 }

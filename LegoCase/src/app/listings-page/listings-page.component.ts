@@ -12,15 +12,15 @@ export class ListingsPageComponent implements OnInit {
   constructor(public basketService: BasketService) { }
 
   public itemsList1 = [
-    {header: 'item1', subheader: 'This is a vase', price: 1200, quantity: 1},
-    {header: 'item2', subheader: 'This is a vase', price: 1002, quantity: 1},
-    {header: 'item3', subheader: 'This is a vase', price: 1004, quantity: 1},
+    {header: 'Soaring wyvern', subheader: 'Acrylic painting', price: 2500, quantity: 1, image: '/assets/images/Painting.png'},
+    {header: 'Secret depths', subheader: 'Acrylic painting', price: 1500, quantity: 1, image: '/assets/images/Painting2.png'},
+    {header: 'Spanish dancer', subheader: 'Acrylic painting', price: 1000, quantity: 1, image: '/assets/images/Painting3.png'},
   ];
 
   public itemsList2 = [
-    {header: 'item4', subheader: 'This is a vase', price: 1200, quantity: 1},
-    {header: 'item5', subheader: 'This is a vase', price: 1002, quantity: 1},
-    {header: 'item6', subheader: 'This is a vase', price: 1004, quantity: 1},
+    {header: 'Reverse owl', subheader: 'Acrylic painting', price: 1500, quantity: 1, image: '/assets/images/Painting4.png'},
+    {header: 'The lionfish', subheader: 'Polymer clay sculpture', price: 5000, quantity: 1, image: '/assets/images/Figure.png'},
+    {header: 'Fenced planter', subheader: 'DIY plant pot', price: 1004, quantity: 1, image: '/assets/images/Plantpot.png'},
   ];
 
   ngOnInit() {
