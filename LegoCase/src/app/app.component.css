@@ -7,3 +7,75 @@
     width: 15rem;
     padding-right: 2rem;
 }
+
+.basket-preview-container {
+    width: 100%;
+    min-height: 48rem;
+    height: 100vh;
+    position: absolute;
+}
+
+.basket-preview-background {
+    background-color: black;
+    opacity: 0.5;
+    width: 100%;
+    min-height: 48rem;
+    height: 100vh;
+    position: absolute;
+}
+
+.basket-preview {
+    background-color: white;
+    width: 30rem;
+    height: 30rem;
+    z-index: 1;
+    border-radius: 0.5rem;
+}
+
+.basket-preview-header {
+    background-color: #74a583;
+    height: 1rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+.item-header {
+    color: black;
+}
+
+.item-subheader {
+    color: #989898;
+}
+
+.preview-img {
+    width: 5rem;
+    height: 5rem;
+    background-color: grey;
+    border-radius: 0.5rem;
+}
+
+.item-container {
+    border-bottom: 2px solid #c7c2c2;
+    width: 28rem;
+    padding: 0.5rem 0;
+}
+
+.remove-btn {
+    background-color: #d46b6b;
+}
+
+.remove-btn:hover {
+    background-color: #d21111;
+}
+
+.item-list-container {
+    height: 23rem;
+    overflow: scroll;
+    overflow-x: hidden;
+    border-bottom: 2px solid grey;
+}
+
+.basket-btn-container {
+    height: 5rem;
+}

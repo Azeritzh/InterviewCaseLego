@@ -1,11 +1,36 @@
+<div *ngIf="openBasketPreview" class="basket-preview-container" fxLayoutAlign="center center">
+  <div class="basket-preview-background"></div>
+    <div class="basket-preview">
+      <h4 class="basket-preview-header">Item added to basket</h4>
+      <div class="item-list-container" fxLayout="column" fxLayoutAlign="start center">
+        <div class="item-container" *ngFor="let item of basketInfo" fxLayout="row" fxLayoutAlign="space-between center">
+          <div>
+            <div class="preview-img"></div>
+          </div>
+          <div>
+            <h3 class="item-header">{{item.header}}</h3>
+            <h4 class="item-subheader">Price: {{item.price}} kr</h4>
+            <h4 class="item-subheader">Quantity: {{item.quantity}}</h4>
+          </div>
+          <button class="remove-btn"><h4>Remove item</h4></button>
+        </div>
+      </div>
+      <div class="basket-btn-container" fxLayout="row" fxLayoutAlign="space-around center">
+        <button><h4>continue shopping</h4></button>
+        <button><h4>Go to basket</h4></button>
+      </div>
+    </div>
+  </div>
+
 <div class="navbar" fxLayout="row" fxLayoutAlign="space-between center">
   <div class="logo">
     <div>logo</div>
   </div>
   <div class="shopping-basket" fxLayout="row" fxLayoutAlign="space-between center" >
     <div>icon</div>
-    <div>2</div>
+    <div>{{basketInfo.length}}</div>
     <div>V</div>
   </div>
 </div>
-<app-listings-page></app-listings-page>
+
+<app-listings-page (basketEvent)="recieveBasketInfo($event)"></app-listings-page>

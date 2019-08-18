@@ -1,14 +1,26 @@
 <div class="listings-background">
     <div class="listings-container" fxLayout="row" fxLayoutAlign="space-around center">
         <div *ngFor="let item of itemsList1">
-            <div class="item-container"></div>
-            <button class="add-to-basket-btn"><h3>Add to basket</h3></button>
+            <div class="item-container" fxLayout="row" fxLayoutAlign="start end">
+                <div class="item-info">
+                    <h3>{{item.header}}</h3>
+                    <h4>{{item.subheader}}</h4>
+                    <h4>DKK {{item.price}}</h4>
+                </div>
+            </div>
+            <button class="add-to-basket-btn" (click)="addToBasket(item)"><h3>Add to basket</h3></button>
         </div>
     </div>
     <div class="listings-container" fxLayout="row" fxLayoutAlign="space-around center">
             <div *ngFor="let item of itemsList2">
-                <div class="item-container"></div>
-                <button class="add-to-basket-btn"><h3>Add to basket</h3></button>
+                <div class="item-container" fxLayout="row" fxLayoutAlign="start end">
+                    <div class="item-info">
+                        <h3>{{item.header}}</h3>
+                        <h4>{{item.subheader}}</h4>
+                        <h4>DKK {{item.price}}</h4>
+                    </div>
+                </div>
+                <button class="add-to-basket-btn" (click)="addToBasket(item)"><h3>Add to basket</h3></button>
             </div>
         </div>
 </div>

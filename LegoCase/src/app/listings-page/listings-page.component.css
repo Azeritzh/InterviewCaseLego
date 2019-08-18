@@ -1,7 +1,8 @@
 .listings-background {
     background-color: #e8e8e8;
-    width: 100%;
-    height: -webkit-fill-available;
+    width: 100vw;
+    min-height: 44rem;
+    height: calc(100vh - 4rem);
 }
 
 .item-container {
@@ -17,4 +18,12 @@
 
 .add-to-basket-btn {
     width: 15rem;
+}
+
+.item-info {
+    background-color: #4c3737;
+    width: 15rem;
+    padding: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
 }
