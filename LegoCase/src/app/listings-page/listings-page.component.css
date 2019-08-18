@@ -1,0 +1,20 @@
+.listings-background {
+    background-color: #e8e8e8;
+    width: 100%;
+    height: -webkit-fill-available;
+}
+
+.item-container {
+    background-color: grey;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 0.5rem;
+}
+
+.listings-container {
+    padding: 2rem;
+}
+
+.add-to-basket-btn {
+    width: 15rem;
+}
