@@ -11,6 +11,9 @@ export class AppComponent {
   public get basketTotalAmount() {
     return this.basketService.totalCost;
   }
+  public get basketTotalQuantity() {
+    return this.basketService.totalQuantity;
+  }
   public showBasketPage = false;
 
   constructor(public basketService: BasketService) {
