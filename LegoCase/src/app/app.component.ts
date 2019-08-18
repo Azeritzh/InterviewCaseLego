@@ -1,5 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { ListingsPageComponent } from '../app/listings-page/listings-page.component';
+import { Component } from '@angular/core';
+import { BasketService } from './basket.service';
 
 @Component({
   selector: 'app-root',
@@ -7,24 +7,27 @@ import { ListingsPageComponent } from '../app/listings-page/listings-page.compon
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'LegoCase';
-  public basketInfo = [
-    {header: 'item1', subheader: 'This is a vase', price: 1200, quantity: 1},
-    {header: 'item2', subheader: 'This is a vase', price: 1002, quantity: 1},
-    {header: 'item1', subheader: 'This is a vase', price: 1200, quantity: 1},
-    {header: 'item2', subheader: 'This is a vase', price: 1002, quantity: 1},
-    {header: 'item1', subheader: 'This is a vase', price: 1200, quantity: 1},
-    {header: 'item2', subheader: 'This is a vase', price: 1002, quantity: 1},
-    {header: 'item1', subheader: 'This is a vase', price: 1200, quantity: 1},
-    {header: 'item2', subheader: 'This is a vase', price: 1002, quantity: 1},
-  ];
+  public basketInfo = [];
+  public basketTotalAmount = 0;
 
-  public openBasketPreview = true;
+  constructor(public basketService: BasketService) {
+    this.basketInfo = basketService.items;
+    this.basketTotalAmount = basketService.calculateTotal();
+  }
 
-  recieveBasketInfo(items: []) {
-    this.basketInfo = items;
+  public openBasketPreview = false;
+
+  public recieveBasketInfo() {
     this.openBasketPreview = true;
+    this.basketTotalAmount = this.basketService.calculateTotal();
+  }
 
-    console.log(this.basketInfo)
+  public closePreviewBasket() {
+    this.openBasketPreview = false;
+  }
+
+  public removeFromBasket(item) {
+    this.basketService.removeItem(item);
+    this.basketTotalAmount = this.basketService.calculateTotal();
   }
 }
